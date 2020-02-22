@@ -1,17 +1,35 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Tab 2
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <form (ngSubmit)="LogInIcp4($event)">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-input name="Username"  type="text" placeholder="Please Enter your Email" [(ngModel)]="usrIcp4"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="Password"  type="Password" placeholder="Type your Password" [(ngModel)]="passIcp4"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="success" type="submit">Login</ion-button>
+        <ion-button expand="block" color="medium"  routerLink="/tab1">Register</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

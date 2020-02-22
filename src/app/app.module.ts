@@ -8,11 +8,32 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireModule} from '@angular/fire';
+import {ReactiveFormsModule} from '@angular/forms';
+
+const FireBase = {
+  apiKey: 'AIzaSyDahE_QEERyQF1HIGcPl6g_zGhEvnIhrdE',
+  authDomain: 'icp5-76861.firebaseapp.com',
+  databaseURL: 'https://icp5-76861.firebaseio.com',
+  projectId: 'icp5-76861',
+  storageBucket: 'icp5-76861.appspot.com',
+  messagingSenderId: '187227148136',
+  appId: '1:187227148136:web:776f09130918b02a7850dd',
+  measurementId: 'G-TQQM0PS9D0'
+};
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+    HttpClientModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(FireBase),
+    ReactiveFormsModule],
   providers: [
     StatusBar,
     SplashScreen,

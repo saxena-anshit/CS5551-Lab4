@@ -1,17 +1,35 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Tab 1
+      Sign Up
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content padding>
+  <form>
+    <br><br>
+    <ion-list>
+      <ion-item>
+        <ion-input type="text"  name="First_name"  placeholder="Type your Surname" [(ngModel)]="FnameIcp4"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text"  name="Last_name"  placeholder="Type your family Name" [(ngModel)]="LnameIcp4"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text"  name="User_name"  placeholder="Type your Email" [(ngModel)]="usrIcp4"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="Password"  name="Password"  placeholder="Type your Password" [(ngModel)]="passIcp4"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="Password"  name="Confirm_Password"  placeholder="Please Confirm your Password" [(ngModel)]="CpassIcp4"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" color="success" (click)="registerIcp4()">Sign up</ion-button>
+    <ion-button expand="block" color="danger" routerLink="/tab2">Cancel</ion-button>
+  </form>
 </ion-content>
