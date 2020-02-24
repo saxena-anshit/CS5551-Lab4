@@ -1,17 +1,106 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Tab 3
+      List of Services
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content *ngIf="ser">
+  <ion-button expand="block" color="dark" (click)="KGS()">Knowledge Graph Search</ion-button>
+  <ion-button expand="block" color="danger" (click)="foodSer2()">Weather </ion-button>
+</ion-content>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content padding *ngIf="ser1">
+  <form>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-input  name="SerFname" type="text" placeholder="Please type your surname" [(ngModel)]="SerFname"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="SerLastname" type="text" placeholder="Please type your family name" [(ngModel)]="SerLastname"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="dark" (click)="SerShow1()">Enter</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" color="dark" (click)="SerList()">Back to Services</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <form *ngIf="SerResult1">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <a>Name: </a>
+            {{SerResult1.itemListElement[0].result.name}}
+          </ion-item>
+          <ion-item>
+            <a>Description: </a>
+            {{SerResult1.itemListElement[0].result.description}}
+          </ion-item>
+          <ion-item>
+            <img src="{{SerResult1.itemListElement[0].result.image.contentUrl}}">
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+
+
+<ion-content padding *ngIf="ser2">
+  <form>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-input #food_type (keyup)="0" name="state" type="text" placeholder="Type the food name" [(ngModel)]="FoodIcp4"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="dark" (click)="getFetchData(food_type.value)()">Enter</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" color="dark" (click)="SerList()">Back to Services</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <form *ngIf="SerResult2">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <a>First result: </a>
+            {{ foodDisplayName }}
+          </ion-item>
+          <ion-item>
+            <a>Calorie Amount: </a>
+            {{ calorieAmount }} Cal
+          </ion-item>
+          <ion-item>
+            <a>Serving Weight: </a>
+            {{ servingWeight }} grams
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

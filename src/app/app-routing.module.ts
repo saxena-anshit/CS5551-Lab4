@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: '',  loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) },
@@ -8,7 +9,7 @@ const routes: Routes = [
   { path: 'tab3', loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule) }
 ];
 @NgModule({
-  imports: [
+  imports: [FormsModule,
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]

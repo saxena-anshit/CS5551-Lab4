@@ -19,10 +19,10 @@ const routes: Routes = [
           { path: '', loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule) }
         ]
       },
-      { path: '',  redirectTo: '/tabs/tab2',  pathMatch: 'full' }
+      { path: '',  redirectTo: '/tabs/tab3',  pathMatch: 'full' }
     ]
   },
-  { path: '',  redirectTo: '/tabs/tab2',  pathMatch: 'full' }
+  { path: '',  redirectTo: '/tabs/tab3',  pathMatch: 'full' }
 ];
 
 @NgModule({

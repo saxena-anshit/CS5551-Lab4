@@ -8,9 +8,9 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 @NgModule({
   imports: [
+    FormsModule,
     IonicModule,
     CommonModule,
-    FormsModule,
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: Tab2Page }])
   ],

@@ -12,7 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireModule} from '@angular/fire';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const FireBase = {
   apiKey: 'AIzaSyDahE_QEERyQF1HIGcPl6g_zGhEvnIhrdE',
@@ -28,12 +28,17 @@ const FireBase = {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    HttpClientModule,
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    AngularFireModule.initializeApp(FireBase),
-    ReactiveFormsModule],
+  imports: [
+      BrowserModule,
+      HttpClientModule,
+      FormsModule,
+      ReactiveFormsModule,
+      IonicModule.forRoot(),
+      AppRoutingModule,
+      AngularFireDatabaseModule,
+      AngularFireAuthModule,
+      AngularFireModule.initializeApp(FireBase),
+      ],
   providers: [
     StatusBar,
     SplashScreen,
