@@ -11,8 +11,8 @@ export class Tab3Page implements OnInit {
   ser1 = '';
   ser2 = '';
   API_KEY = 'AIzaSyDPG9vOhnT8g_NYQ33bQocDWS8l7AH4AT0';
-  SerFname = 'Donald';
-  SerLastname = 'Trump';
+  SerFname = 'shahid';
+  SerLastname = 'kapoor';
   SerResult1: any;
   SerResult2: any;
   calorieAmount: number;
@@ -58,8 +58,7 @@ export class Tab3Page implements OnInit {
     this.calorieAmount = 0.0;
     this.servingWeight = 0.0;
   }
-
-
+  
   getNutrition() {
     if ((this.FoodIcp4 != null)) {
       this.SerhttpIcp4.get('https://api.nutritionix.com/v1_1/search/' +

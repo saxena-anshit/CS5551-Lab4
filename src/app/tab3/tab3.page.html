@@ -11,7 +11,7 @@
 
 <ion-content *ngIf="ser">
   <ion-button expand="block" color="dark" (click)="KGS()">Knowledge Graph Search</ion-button>
-  <ion-button expand="block" color="danger" (click)="foodSer2()">Weather </ion-button>
+  <ion-button expand="block" color="danger" (click)="foodSer2()">food</ion-button>
 </ion-content>
 
 <ion-content padding *ngIf="ser1">
@@ -20,10 +20,10 @@
       <ion-col>
         <ion-list>
           <ion-item>
-            <ion-input  name="SerFname" type="text" placeholder="Please type your surname" [(ngModel)]="SerFname"></ion-input>
+            <ion-input  name="SerFname" type="text" placeholder="Please type the first name" [(ngModel)]="SerFname"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input name="SerLastname" type="text" placeholder="Please type your family name" [(ngModel)]="SerLastname"></ion-input>
+            <ion-input name="SerLastname" type="text" placeholder="Please type the surname" [(ngModel)]="SerLastname"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
